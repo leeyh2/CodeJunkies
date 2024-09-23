@@ -1,0 +1,18 @@
+Date: 09/23/2024
+
+BucStop
+Team Members: Name (SM), Name (PO), Name (Dev), Name (Dev), Name (Dev), Name (Dev), Name (Dev), Name (Dev)
+*Important notes: This is optional, you can add your name and date to the text block after finishing. 
+Examples: 
+I found a bug that causes xyz (Abigayle Hays). 
+      	I found a bug that causes xyz (Abigayle Hays, 03/30/2024).  
+Source Control: 
+There will be four branches each sprint: main, dev, sprint #, and sprint # - feature branch. 
+Main:  The main branch will not be touched till the release of the product 
+Dev: Dev branch is the branch of the current state of our project throughout the sprints 
+Dev-Sprint#: The sprint # for example the first sprint branch will be called Sprint 1. This branch should be created before a sprint begins. The sprint branch will be the dev's way to check for any merger conflicts and defects that come with any mergers. Also, each Sprint branch will not be deleted as it is a version of the product, and it gives the team a fallback version of the product. 
+Sprint#-DevName-Feature: This branch is for each dev to create a branch from Dev-Sprint# branch to create features.
+EX: Sprint3-JohnDoe-AddedComment
+
+Citations:
+When doing research for a problem please include your sources, a simple URL will suffice.
