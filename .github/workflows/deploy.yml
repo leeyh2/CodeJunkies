@@ -4,7 +4,7 @@ name: Deploy Pipeline
 on:
   pull_request:
     branches:
-      - Sprint#2---Grayson-Burke---CJ3
+      - main
     types:
       - closed
 
