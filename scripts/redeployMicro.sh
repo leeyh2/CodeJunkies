@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo docker pull sirethan/gamemicro
+sudo docker pull burkegm/gamemicro
 
 sudo docker compose up --no-deps -d micro
 
