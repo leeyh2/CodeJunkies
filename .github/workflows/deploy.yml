@@ -4,7 +4,7 @@ name: Deploy Pipeline
 on:
   pull_request:
     branches:
-      - Sprint#2---Grayson-Burke---CJ3
+      - main
     types:
       - closed
 
@@ -17,7 +17,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: Sprint#2---Grayson-Burke---CJ3
+          ref: main
 
         #Log into docker hub with username and password 
       - name: Login to Docker Hub
