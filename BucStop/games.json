@@ -11,7 +11,7 @@
     "Id": 2,
     "Title": "Tetris",
     "Content": "/js/tetris.js",
-    "Description": "Tetris Description",
+    "Description": "Tetris is a classic arcade puzzle game where the player has to arrange falling blocks, also known as Tetronimos, of different shapes and colors to form complete rows on the bottom of the screen. The game gets faster and harder as the player progresses, and ends when the Tetronimos reach the top of the screen.",
     "Thumbnail": "/images/tetris.jpg",
     "PlayCount": 0
   },
