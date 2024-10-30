@@ -3,7 +3,7 @@
     "Id": 1,
     "Title": "Snake",
     "Content": "/js/snake.js",
-    "Description": "Snake Description",
+    "Description": "Snake is a classic arcade game that challenges the player to control a snake-like creature that grows longer as it eats apples. The player must avoid hitting the walls or the snake's own body, which can end the game.",
     "Thumbnail": "/images/snake.jpg",
     "PlayCount": 0
   },
