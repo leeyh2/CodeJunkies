@@ -286,17 +286,9 @@ function loop() {
   }
 }
 
-// Define key bindings for game controls using key codes.
-const keyBindings = {
-     32: 'instantDrop' // spacebar
-};
-
 // listen to keyboard events to move the active tetromino
 document.addEventListener('keydown', function(e) {
   if (gameOver) return;
-
-  // Retrieve the action associated with the pressed key from keyBindings.
-  const action = keyBindings[e.which];
 
   // left and right arrow keys (move)
   if (e.which === 37 || e.which === 39) {
@@ -333,16 +325,15 @@ document.addEventListener('keydown', function(e) {
         e.preventDefault();
       }
 
-    // Handle the action for (spacebar) instant dropping the tetromino.
-    if (action === 'instantDrop') {
+      if (e.which === 32) {
           // Space bar pressed - move tetromino to bottom
           let row = tetromino.row;
           while (isValidMove(tetromino.matrix, row + 1, tetromino.col)) {
               row++;
           }
-          tetromino.row = row;  // move tetromino to the lowest possible row
-          placeTetromino();     // Place the tetromino
-          e.preventDefault();   // Prevent the default action for spacebar
+    tetromino.row = row;
+          placeTetromino();
+          return;
   }
 });
 
