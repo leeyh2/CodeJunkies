@@ -340,12 +340,12 @@ document.addEventListener('keydown', function (e) {
 function showStartScreen() {
     context.font = '36px Arial';
     context.textAlign = 'center';
-    context.fillText('Press space to start', canvas.width / 2, canvas.height / 2);
+    context.fillText('Press Enter to Start', canvas.width / 2, canvas.height / 2);
 }
 
 // on keyboard press of space, start the game.
 document.body.onkeyup = function (e) {
-    if (e.keyCode == 32) {
+    if (e.keyCode == 13) {
         rAF = requestAnimationFrame(loop);
     }
 }
