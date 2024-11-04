@@ -5,6 +5,14 @@ VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BucStop", "BucStop\BucStop.csproj", "{1F30B091-BD9E-44E5-B075-3930E85838D6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4F473EE1-04D3-4BDB-8CE9-B3F9F4744CF1}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\docker-compose.yml = scripts\docker-compose.yml
+		scripts\firstDeploy.sh = scripts\firstDeploy.sh
+		scripts\redeployBucstop.sh = scripts\redeployBucstop.sh
+		scripts\redeployMicro.sh = scripts\redeployMicro.sh
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

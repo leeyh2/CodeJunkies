@@ -3,7 +3,7 @@
     "Id": 1,
     "Title": "Snake",
     "Content": "/js/snake.js",
-    "Description": "Snake Description",
+    "Description": "Snake is a classic arcade game that challenges the player to control a snake-like creature that grows longer as it eats apples. The player must avoid hitting the walls or the snake's own body, which can end the game.",
     "Thumbnail": "/images/snake.jpg",
     "PlayCount": 0
   },
@@ -11,7 +11,7 @@
     "Id": 2,
     "Title": "Tetris",
     "Content": "/js/tetris.js",
-    "Description": "Tetris Description",
+    "Description": "Tetris is a classic arcade puzzle game where the player has to arrange falling blocks, also known as Tetronimos, of different shapes and colors to form complete rows on the bottom of the screen. The game gets faster and harder as the player progresses, and ends when the Tetronimos reach the top of the screen.",
     "Thumbnail": "/images/tetris.jpg",
     "PlayCount": 0
   },
@@ -19,7 +19,7 @@
     "Id": 3,
     "Title": "Pong",
     "Content": "/js/pong.js",
-    "Description": "Pong Description",
+    "Description": "Pong is a classic arcade game where the player uses a paddle to hit a ball against a computer's paddle. Either party scores when the ball makes it past the opponent's paddle.",
     "Thumbnail": "/images/pong.jpg",
     "PlayCount": 0
   }
