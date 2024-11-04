@@ -286,6 +286,37 @@ function loop() {
     }
 }
 
+// Function to trigger a glow effect around the tetromino
+// shows that the spacebar has been triggered
+function glowEffect() {
+    context.shadowBlur = 20; // Adjust for glow intensity
+    context.shadowColor = colors[tetromino.name]; // Use tetromino color for glow
+    drawTetromino(); // Draw with glow effect
+
+    // Remove glow after a short delay
+    setTimeout(() => {
+        context.shadowBlur = 0; // Reset glow
+        context.shadowColor = 'transparent';
+        drawTetromino(); // Redraw without glow
+    }, 100); // Short glow duration
+}
+
+// Draw tetromino function to handle rendering
+function drawTetromino() {
+    for (let row = 0; row < tetromino.matrix.length; row++) {
+        for (let col = 0; col < tetromino.matrix[row].length; col++) {
+            if (tetromino.matrix[row][col]) {
+                context.fillStyle = colors[tetromino.name];
+                context.fillRect(
+                    (tetromino.col + col) * grid,
+                    (tetromino.row + row) * grid,
+                    grid - 1, grid - 1
+                );
+            }
+        }
+    }
+}
+
 // listen to keyboard events to move the active tetromino
 document.addEventListener('keydown', function (e) {
     if (gameOver) return;
@@ -319,6 +350,7 @@ document.addEventListener('keydown', function (e) {
         }
         tetromino.row = row;
         placeTetromino();
+        glowEffect(); // Trigger a quick glow effect to indicate the instant drop
     }
 
     // down arrow key (drop)
