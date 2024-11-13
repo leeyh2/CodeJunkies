@@ -21,6 +21,7 @@
     "Title": "Pong",
     "Content": "/js/pong.js",
     "Description": "Pong is a classic arcade game where the player uses a paddle to hit a ball against a computer's paddle. Either party scores when the ball makes it past the opponent's paddle.",
+    "HowTo": "To play Pong use left and right arrow key to move the paddle.",
     "Thumbnail": "/images/pong.jpg",
     "PlayCount": 0
   }
