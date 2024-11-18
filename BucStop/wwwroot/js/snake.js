@@ -59,6 +59,7 @@ function showStartScreen() {
 function loop() {
 
     if (isGameOver) {
+        gameOver();
         //Game Over State
         //Does Nothing right now
         //Need to change state
@@ -194,3 +195,43 @@ document.body.onkeyup = function (e) {
 }
 
 showStartScreen();
+
+// Function to draw the "Game Over" screen
+function drawGameOverScreen() {
+    // Clear the canvas
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Set background color
+    //context.fillStyle = '#222';
+    //context.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Draw "Game Over" text
+    context.fillStyle = '#FF0000';
+    context.font = '60px Arial';
+    context.textAlign = 'center';
+    context.fillText('Game Over', canvas.width / 2, canvas.height / 2 - 50);
+
+    // Draw additional text
+    //context.fillStyle = '#FFFFFF';
+    //context.font = '30px Arial';
+    //context.fillText('Press R to Restart', canvas.width / 2, canvas.height / 2 + 20);
+
+    // Optional: Draw an image
+    const gameOverImage = new Image();
+    gameOverImage.src = '/images/snakegameover.png'; // Replace with your image path
+    gameOverImage.onload = () => {
+        context.drawImage(
+            gameOverImage,
+            canvas.width / 2 - gameOverImage.width / 4,
+            canvas.height / 2 - 30,
+            gameOverImage.width / 2,
+            gameOverImage.height / 2
+        );
+    };
+
+}
+function gameOver() {
+    drawGameOverScreen();
+    console.log("Game Over triggered!");
+}
+// Function to trigger game over
