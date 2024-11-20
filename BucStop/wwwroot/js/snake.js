@@ -50,9 +50,34 @@ function getRandomInt(min, max) {
 }
 
 function showStartScreen() {
-    context.font = '36px Arial';
-    context.textAlign = 'center';
-    context.fillText('Press space to start', canvas.width / 2, canvas.height / 2);
+    //context.font = '36px Arial';
+    //context.textAlign = 'center';
+    //context.fillText('Press space to start', canvas.width / 2, canvas.height / 2);
+
+    // Create a new image object
+    const image = new Image();
+    image.src = '/images/snake.jpg'; // Ensure this is the correct path
+
+    // When the image loads, render it on the canvas
+    image.onload = function () {
+        // Set canvas size explicitly in case it's not defined in HTML
+        canvas.width = 400;
+        canvas.height = 400;
+
+        // Draw the image to cover the entire canvas
+        context.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+        // Add the text overlay
+        context.font = '36px Arial';
+        context.textAlign = 'center';
+        context.fillStyle = 'Red';
+        context.fillText('Press space to start', canvas.width / 2, canvas.height - 20);
+    };
+
+    // Log an error if the image fails to load
+    image.onerror = function () {
+        console.error('Failed to load the image at:', image.src);
+    };
 }
 
 // game loop
@@ -160,7 +185,7 @@ document.addEventListener('keydown', function(e) {
   // prevent snake from backtracking on itself by checking that it's
   // not already moving on the same axis (pressing left while moving
   // left won't do anything, and pressing right while moving left
-  // shouldn't let you collide with your own body)
+    // shouldn't let you collide with your own body)
 
   // left arrow key
   if (e.which === 37 && snake.dx === 0) {
