@@ -223,6 +223,7 @@ const tetrominos = {
     ]
 };
 
+
 // color of each tetromino
 const colors = {
     'I': 'cyan',
@@ -372,7 +373,19 @@ document.addEventListener('keydown', function (e) {
 function showStartScreen() {
     context.font = '36px Arial';
     context.textAlign = 'center';
-    context.fillText('Press Enter to Start', canvas.width / 2, canvas.height / 2);
+    context.fillText('Press Enter to Start', canvas.width / 2, canvas.height / 1.2);
+
+    const gameOverImage = new Image();
+    gameOverImage.src = '/images/tetris.png'; // Replace with your image path
+    gameOverImage.onload = () => {
+        context.drawImage(
+            gameOverImage,
+            canvas.width / 2 - gameOverImage.width / 4,
+            canvas.height / 5 - 30,
+            gameOverImage.width / 2,
+            gameOverImage.height / 2
+        );
+    };
 }
 
 // on keyboard press of space, start the game.
