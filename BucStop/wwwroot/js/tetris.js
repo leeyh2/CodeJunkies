@@ -153,16 +153,58 @@ function showGameOver() {
     cancelAnimationFrame(rAF);
     gameOver = true;
 
-    context.fillStyle = 'black';
-    context.globalAlpha = 0.75;
-    context.fillRect(0, canvas.height / 2 - 30, canvas.width, 60);
+    // Draw more translucent dark background overlay
+    context.fillStyle = 'rgba(0, 0, 0, 0.35)'; // Adjusted opacity to 0.5 for more translucency
+    context.fillRect(0, 0, canvas.width, canvas.height);
 
-    context.globalAlpha = 1;
-    context.fillStyle = 'white';
-    context.font = '20px monospace';
+    // Create a multi-color gradient for "TETRIS" text
+    const gradient = context.createLinearGradient(0, 0, canvas.width, 0);
+    gradient.addColorStop(0, 'red');      // Start with red
+    gradient.addColorStop(0.2, 'orange'); // Add orange at 20% of the width
+    gradient.addColorStop(0.4, 'yellow'); // Add yellow at 40% of the width
+    gradient.addColorStop(0.6, 'green');  // Add green at 60% of the width
+    gradient.addColorStop(0.8, 'blue');   // Add blue at 80% of the width
+    gradient.addColorStop(1, 'purple');   // End with purple
+
+    // Add glow effect for "TETRIS"
+    context.shadowColor = 'black';  // Glow color
+    context.shadowBlur = 20;
+
+    // Display "TETRIS" message with the multi-color gradient
+    context.fillStyle = gradient; // Apply gradient color to TETRIS text
+    context.font = 'bold 90px "Blox 2", sans-serif'; // Increase the font size for TETRIS
     context.textAlign = 'center';
     context.textBaseline = 'middle';
-    context.fillText('GAME OVER! Score: ' + score, canvas.width / 2, canvas.height / 2);
+    context.fillText('TETRIS', canvas.width / 2, canvas.height / 2 - 120); // Adjust vertical position
+
+    // Reset shadow for other text
+    context.shadowBlur = 0;
+
+    // Add glow effect for "GAME OVER"
+    context.shadowColor = 'cyan';
+    context.shadowBlur = 20;
+
+    // Display "GAME OVER" message with large, eye-catching font
+    context.fillStyle = 'white';
+    context.font = 'bold 58px monospace';
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.fillText('GAME OVER', canvas.width / 2, canvas.height / 2); // Adjust vertical position
+
+    // Reset shadow for other text
+    context.shadowBlur = 0;
+
+    // Add glow effect for the score text
+    context.shadowColor = 'cyan';  // Glow color for score
+    context.shadowBlur = 10;      // Less blur for score compared to other texts
+
+    // Display the final score with a glowing effect
+    context.fillStyle = 'white';
+    context.font = '30px monospace'; // Increase the font size for score
+    context.fillText(`Your Score: ${score}`, canvas.width / 2, canvas.height / 2 + 40); // Adjust vertical position
+
+    // Reset shadow for other text
+    context.shadowBlur = 0;
 }
 
 const canvas = document.getElementById('game');
@@ -222,6 +264,7 @@ const tetrominos = {
         [0, 0, 0],
     ]
 };
+
 
 // color of each tetromino
 const colors = {
@@ -372,7 +415,19 @@ document.addEventListener('keydown', function (e) {
 function showStartScreen() {
     context.font = '36px Arial';
     context.textAlign = 'center';
-    context.fillText('Press Enter to Start', canvas.width / 2, canvas.height / 2);
+    context.fillText('Press Enter to Start', canvas.width / 2, canvas.height / 1.2);
+
+    const gameOverImage = new Image();
+    gameOverImage.src = '/images/tetris.png'; // Replace with your image path
+    gameOverImage.onload = () => {
+        context.drawImage(
+            gameOverImage,
+            canvas.width / 2 - gameOverImage.width / 4,
+            canvas.height / 5 - 30,
+            gameOverImage.width / 2,
+            gameOverImage.height / 2
+        );
+    };
 }
 
 // on keyboard press of space, start the game.
