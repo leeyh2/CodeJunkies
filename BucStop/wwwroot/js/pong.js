@@ -130,10 +130,10 @@ function showStartScreen() {
     gameStartImage.onload = () => {
         context.drawImage(
             gameStartImage,
-            canvas.width / 2 - gameStartImage.width / 4,
-            canvas.height / 2 - 30,
-            gameStartImage.width / 2,
-            gameStartImage.height / 2
+            0,
+            0,
+            gameStartImage.width - 121,
+            gameStartImage.height - 60
         );
     };
 
