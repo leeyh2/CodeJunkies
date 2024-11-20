@@ -125,6 +125,18 @@ function endGame() {
 }
 
 function showStartScreen() {
+    const gameStartImage = new Image();
+    gameStartImage.src = '/images/Pong-Start-Retro-blue.png'; // Replace with your image path
+    gameStartImage.onload = () => {
+        context.drawImage(
+            gameStartImage,
+            canvas.width / 2 - gameStartImage.width / 4,
+            canvas.height / 2 - 30,
+            gameStartImage.width / 2,
+            gameStartImage.height / 2
+        );
+    };
+
     context.font = '36px Arial';
     context.textAlign = 'center';
     context.fillText('Press space to start', canvas.width / 2, canvas.height / 2);
