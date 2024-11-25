@@ -1,13 +1,18 @@
 Fall 2024 source control process
 
-We had a source control manager that was in charge of processing pull requests. This was a dev. This helps resolve some confusion when merging changes. Have all devs open a pull request for their changes, and then the SC manager processes these changes. Once the requests have been processed, the Dev branch needs to be tested to make sure nothing broke. 
+We had a source control manager that was in charge of processing pull requests. This was a dev. This helps resolve some confusion when merging changes. 
+Have all devs open a pull request for their changes, and then the SC manager processes these changes. 
+Once the requests have been processed, the Dev branch needs to be tested to make sure nothing broke. 
 
 Source Control: 
 There were three branches we used: main, Dev, and Sprint#-DevName-Feature 
 
 -main: The main branch will not be touched untill the release of the product. This is the production instance of the solution. 
 
--Dev: At the beginning of each sprint Dev should refelct the main branch. As developers complete tasks, the source control manager processed the pull requests into Dev and tested the changes to make sure they work. At the end of the sprint, once Dev was merged into main, Dev was deleted and a new Dev branch was created from main. 
+-Dev: At the beginning of each sprint Dev should refelct the main branch. 
+As developers complete tasks, the source control manager processed the pull requests into Dev and tested the changes to make sure they work. 
+At the end of the sprint, once Dev was merged into main, Dev was deleted and a new Dev branch was created from main. 
 
--Sprint#-DevName-Feature: This branch is for each dev to create and implement their features on. At the end of each sprint, this branch can be deleted to avoid cluttter.  
+-Sprint#-DevName-Feature: This branch is for each dev to create and implement their features on. 
+At the end of each sprint, this branch can be deleted to avoid cluttter.  
 EX: Sprint3-JohnDoe-Tetris_Bug_Fix
